@@ -68,7 +68,7 @@ async def add_signal(file: UploadFile=File(...)):
     Raises: 
         HTTPException: Invalid pickle file format type
     """
-    # Rais
+    # Raise error if unexpected file format
     if (file.content_type!= 'application/octet-stream'):
         raise HTTPException(status_code=400, detail="Invalid signal data file format. Only pickle files containing single lists are allowed")
     else:
@@ -84,7 +84,8 @@ async def add_signal(file: UploadFile=File(...)):
         sigObjects.clear()
         sigObjects.append({"signal":sig})
         return {"data":sigObjects}   
- 
+
+# Input object verification
 def signalCheck():
     """
     Checking if the signal object exists
@@ -115,5 +116,5 @@ def compute_freq():
     # Acquiring signal and computing dominant frequency using class method
     sampleSignal = sigObjects[-1]["signal"]
     sampleSignal.dom_freq = sampleSignal.compute()
-    return f"The dominant frequency of signal is {sampleSignal.dom_freq}"
+    return f"The dominant frequency of signal is {sampleSignal.dom_freq} Hz"
    
