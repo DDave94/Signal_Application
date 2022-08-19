@@ -32,7 +32,7 @@ Process to run the application:
 - When the application is running, open browser and navigate to http://0.0.0.0:9000/
 
 Process to provide signal inputs and find dominant frequency:
-- Open terminal window and run the following command: 
+- Open terminal window and run the following command (NOTE: Remember to update the filepath in the file argument): 
 ```
 curl -X 'POST' \
   'http://0.0.0.0:9000/input' \
