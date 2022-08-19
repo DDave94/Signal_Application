@@ -1,9 +1,9 @@
 # Signal Analyzer App
 
 ## Table of Contents 
-* [General Info] (#general-info)
-* [Setup] (#setup)
-* [Potenial Optimizations] (#setup)
+1. [General Info] (#general-info)
+2. [Setup] (#setup)
+3. [Potenial Optimizations] (#Optimization)
 
 ## General Info
 This project is a simple RESTful API application which computes the dominant frequency for 1D signals. 
