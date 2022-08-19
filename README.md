@@ -55,12 +55,15 @@ Alternative process to provide signal data and compute frequency
 - Navigate to http://0.0.0.0:9000/docs in your browser
 - Perform the following operations to compute dominant frequency:
     - Locate the POST (/input) endpoint
-        - Click "Try it Out". Browse to provide the pickle file in the data folder and execute
+        - Click "Try it Out". Browse to provide the pickle file in the data folder of the application 
+        - Click Execute
         - Verify the response is an appropriate signal of float elements 
     - Locate the GET (/dominant_frequence) endpoint
-        - Click Execute 
+        - Click "Try it Out" and Execute
         - Verify the response contains the dominant frequency of 320.0 Hz
     
 ## Potential Optimizations
-- Replacing the pickle list into an array to reduce memory usage
-- Change the 
+- Replacing pickle list with a numpy array. Python lists consume more memory than Python arrays due to their ability to store multiple datatypes. Also, numerical computations are faster with numpy arrays as compared to lists.  
+- Redefine the Signal class in a seperate module, import the Signal class. This will make our source code more modular, reduce the possibility of programming errors, and allow us to make changes to the signal class more effectively.
+- When defining the signal class, inherit from Pydantic library BaseModel class to make the Signal Class a child class. 
+    - Allows us to leverage the FastAPI inbuilt data type validation when creating signals using pickle files. If there is a validation error, the traceability is also improved.  
