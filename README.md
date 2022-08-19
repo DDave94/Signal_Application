@@ -58,7 +58,7 @@ Alternative process to provide signal data and compute frequency
         - Click "Try it Out". Browse to provide the pickle file in the data folder of the application 
         - Click Execute
         - Verify the response is an appropriate signal of float elements 
-    - Locate the GET (/dominant_frequence) endpoint
+    - Locate the GET (/dominant_frequency) endpoint
         - Click "Try it Out" and Execute
         - Verify the response contains the dominant frequency of 320.0 Hz
     
