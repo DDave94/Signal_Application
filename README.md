@@ -66,4 +66,5 @@ Alternative process to provide signal data and compute frequency
 - Replacing pickle list with a numpy array. Python lists consume more memory than Python arrays due to their ability to store multiple datatypes. Also, numerical computations are faster with numpy arrays as compared to lists.  
 - Redefine the Signal class in a seperate module, import the Signal class. This will make our source code more modular, reduce the possibility of programming errors, and allow us to make changes to the signal class more effectively.
 - When defining the signal class, inherit from Pydantic library BaseModel class to make the Signal Class a child class. 
-    - Allows us to leverage the FastAPI inbuilt data type validation when creating signals using pickle files. If there is a validation error, the traceability is also improved.  
+    - Allows us to leverage the FastAPI inbuilt data type validation when creating signals using pickle files. We can validate things such as the length and type of signal. 
+    - If there is a validation error, the traceability and troubleshooting is also improved due to the level of clarity in the error message.  
