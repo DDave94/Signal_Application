@@ -31,11 +31,27 @@ Process to run the application:
     - 'docker compose up'
 - When the application is running, open browser and navigate to http://0.0.0.0:9000/
 
-Process to provide signal inputs and find dominant frequency
-- In another bash terminal window run the following commands: 
-    - 
+Process to provide signal inputs and find dominant frequency:
+- Open terminal window and run the following command: 
+```
+curl -X 'POST' \
+  'http://0.0.0.0:9000/input' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@./{insert_your_file_path}/sampleSigData.pickle'
+```
+This should create a signal object resource on the server
 
-Alternative Checking
+- In the same terminal window and run the following command: 
+```
+curl -X 'GET' \
+  'http://0.0.0.0:9000/dominant_frequency' \
+  -H 'accept: application/json'
+```
+This should compute the dominant frequency and provide the following response: 
+"The dominant frequency of signal is 320.0"
+
+Alternative process to provide signal data and compute frequency 
 - Navigate to http://0.0.0.0:9000/docs in your browser
 - Perform the following operations to compute dominant frequency:
     - Locate the POST (/input) endpoint
